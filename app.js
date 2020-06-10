@@ -1,9 +1,11 @@
 const express = require('express');
 const app = express();
+const morgan = require('morgan')
 
-app.get("/", (req, res) => {
-    res.send("Test node api v2")
-});
+// Post routes 
+const {getPosts} = require('./routes/post')
+
+app.get("/", getPosts);
 
 const port = 2020; 
 app.listen(port, () => {
