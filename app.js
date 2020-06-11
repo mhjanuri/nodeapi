@@ -3,9 +3,12 @@ const app = express();
 const morgan = require('morgan')
 
 // Post routes 
-const {getPosts} = require('./routes/post')
+const postRoutes = require('./routes/post')
 
-app.get("/", getPosts);
+// Middleware
+app.use(morgan('dev'))
+
+app.use("/", postRoutes);
 
 const port = 2020; 
 app.listen(port, () => {
