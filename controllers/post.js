@@ -1,4 +1,6 @@
 exports.getPosts = (req, res) => {
-    res.send("Test node api v2");
+    res.json({
+        posts: [{ title: "first post" }, { title: "second post" }]
+    });
 };
 
